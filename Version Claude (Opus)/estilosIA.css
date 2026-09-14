@@ -1,0 +1,284 @@
+/* ===== Ludoteca — estilos minimalistas (rojo y marrón) ===== */
+
+:root {
+  --rojo: #8f1d14;
+  --rojo-claro: #b93a2c;
+  --marron: #4a332a;
+  --marron-claro: #7a5c4b;
+  --fondo: #faf6f2;
+  --texto: #241a15;
+  --borde: #ddd0c6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+/* Enlace para saltar al contenido (accesibilidad con teclado) */
+.salto {
+  position: absolute;
+  left: -9999px;
+  background-color: var(--marron);
+  color: #fff;
+  padding: 0.6em 1em;
+  z-index: 10;
+}
+.salto:focus {
+  left: 0.5em;
+  top: 0.5em;
+}
+
+/* Foco visible en todo elemento interactivo */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--rojo-claro);
+  outline-offset: 2px;
+}
+
+/* ===== Encabezado y navegación ===== */
+
+header {
+  background-color: var(--marron);
+  color: #fff;
+  padding: 1.2em 1em;
+}
+
+header h1 {
+  margin: 0 0 0.2em 0;
+  font-size: 1.6em;
+}
+
+header p {
+  margin: 0;
+  color: #f0e5dd;
+}
+
+nav {
+  background-color: var(--rojo);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  flex: 1 1 auto;
+}
+
+nav a {
+  display: block;
+  padding: 0.8em 1em;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  background-color: var(--rojo-claro);
+  text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--rojo-claro);
+  border-bottom-color: #fff;
+  font-weight: bold;
+}
+
+/* ===== Contenido principal ===== */
+
+main {
+  max-width: 62em;
+  margin: 0 auto;
+  padding: 1.5em 1em 3em 1em;
+}
+
+main h2 {
+  color: var(--rojo);
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 0.3em;
+}
+
+main h3 {
+  color: var(--marron);
+  margin: 0 0 0.3em 0;
+}
+
+a {
+  color: var(--rojo);
+}
+
+/* ===== Catálogo: lista de categorías ===== */
+
+.categorias {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.categorias li {
+  flex: 1 1 14em;
+}
+
+.categorias a {
+  display: block;
+  padding: 1.2em;
+  background-color: #fff;
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--rojo);
+  color: var(--marron);
+  text-decoration: none;
+}
+
+.categorias a:hover {
+  background-color: #f3e9e3;
+  text-decoration: underline;
+}
+
+/* ===== Reseñas de juegos ===== */
+
+.juego {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  background-color: #fff;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--marron);
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.juego img {
+  width: 180px;
+  height: auto;
+  border: 1px solid var(--borde);
+}
+
+.juego .datos {
+  flex: 1 1 18em;
+}
+
+.juego dl {
+  margin: 0.5em 0;
+}
+
+.juego dt {
+  font-weight: bold;
+  color: var(--marron-claro);
+}
+
+.juego dd {
+  margin: 0 0 0.4em 0;
+}
+
+.reglamento {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--rojo);
+  color: #fff;
+  text-decoration: none;
+}
+
+.reglamento:hover {
+  background-color: var(--marron);
+  text-decoration: underline;
+}
+
+/* ===== Formulario de contacto ===== */
+
+form {
+  max-width: 34em;
+}
+
+fieldset {
+  border: 1px solid var(--borde);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+legend {
+  color: var(--rojo);
+  font-weight: bold;
+  padding: 0 0.4em;
+}
+
+label {
+  display: block;
+  margin-top: 0.8em;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  border: 1px solid var(--marron-claro);
+  font-family: inherit;
+  font-size: 1em;
+  background-color: #fff;
+}
+
+button {
+  margin-top: 1em;
+  padding: 0.7em 1.5em;
+  background-color: var(--rojo);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--marron);
+}
+
+/* ===== Pie ===== */
+
+footer {
+  background-color: var(--marron);
+  color: #f0e5dd;
+  padding: 1.2em 1em;
+  text-align: center;
+}
+
+footer a {
+  color: #ffd9d0;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 40em) {
+  nav ul {
+    flex-direction: column;
+  }
+  .juego {
+    flex-direction: column;
+  }
+  .juego img {
+    width: 100%;
+    max-width: 240px;
+  }
+  header h1 {
+    font-size: 1.3em;
+  }
+}
